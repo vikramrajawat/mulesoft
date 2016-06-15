@@ -1,0 +1,1000 @@
+<metadata__catalog__entry>
+  <version>5.2.0.0</version>
+  <types class="tree-map">
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>ListInventory</id>
+        <displayName>ListInventory</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields/>
+        <rootElement>
+          <namespaceURI>http://mulesoft.org/tshirt-service</namespaceURI>
+          <localPart>ListInventory</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas>
+            <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ms=&quot;http://mulesoft.org/tshirt-service&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http://mulesoft.org/tshirt-service&quot;&gt;
+            &lt;xsd:element name=&quot;ListInventory&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence/&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;ListInventoryResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;inventory&quot; type=&quot;ms:InventoryItem&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+        
+                &lt;xsd:complexType name=&quot;InventoryItem&quot;&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;productCode&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                        &lt;xsd:element name=&quot;description&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;count&quot; type=&quot;xsd:integer&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            
+            &lt;xsd:simpleType name=&quot;Size&quot;&gt;
+                &lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+                    &lt;xsd:enumeration value=&quot;S&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;M&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;L&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;XL&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;XXL&quot;/&gt;
+                &lt;/xsd:restriction&gt;
+            &lt;/xsd:simpleType&gt;
+            
+            &lt;xsd:element name=&quot;OrderTshirt&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                        &lt;xsd:element name=&quot;email&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;name&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;address1&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;address2&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;city&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;stateOrProvince&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;postalCode&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;country&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+            &lt;xsd:element name=&quot;OrderTshirtResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+            &lt;xsd:element name=&quot;TrackOrder&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;email&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;TrackOrderResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;status&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;AuthenticationHeader&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;apiKey&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;APIUsageInformation&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;apiCallsRemaining&quot; type=&quot;xsd:integer&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;TshirtFault&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;errorMessage&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+        &lt;/xsd:schema&gt;</string>
+          </schemas>
+          <encoding>UTF-8</encoding>
+          <baseUri>src/main/resources/tshirt.wsdl</baseUri>
+        </schemas>
+        <namespaceManager>
+          <namespacePrefix>
+            <entry>
+              <string>http://mulesoft.org/tshirt-service</string>
+              <string>ns0</string>
+            </entry>
+          </namespacePrefix>
+        </namespaceManager>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>ListInventoryResponse</id>
+        <displayName>ListInventoryResponse</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>inventory</name>
+            <model class="org.mule.common.metadata.DefaultListMetaDataModel">
+              <dataType>LIST</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName>
+                      <namespaceURI>http://mulesoft.org/tshirt-service</namespaceURI>
+                      <localPart>InventoryItem</localPart>
+                      <prefix></prefix>
+                    </typeQName>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                  <org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                    <maxOccurs>2147483647</maxOccurs>
+                    <minOccurs>1</minOccurs>
+                  </org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+              <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+                <dataType>XML</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+                <fields>
+                  <org.mule.common.metadata.DefaultMetaDataField>
+                    <name>productCode</name>
+                    <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                      <dataType>STRING</dataType>
+                      <metaDataModelPropertiesManager>
+                        <properties>
+                          <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                            <typeQName>
+                              <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+                              <localPart>string</localPart>
+                              <prefix></prefix>
+                            </typeQName>
+                          </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                        </properties>
+                      </metaDataModelPropertiesManager>
+                    </model>
+                    <accessType>READ_WRITE</accessType>
+                    <metaDataFieldPropertyManager>
+                      <properties>
+                        <org.mule.common.metadata.property.QNameMetaDataProperty>
+                          <name>
+                            <namespaceURI></namespaceURI>
+                            <localPart>productCode</localPart>
+                            <prefix></prefix>
+                          </name>
+                        </org.mule.common.metadata.property.QNameMetaDataProperty>
+                      </properties>
+                    </metaDataFieldPropertyManager>
+                  </org.mule.common.metadata.DefaultMetaDataField>
+                  <org.mule.common.metadata.DefaultMetaDataField>
+                    <name>size</name>
+                    <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                      <dataType>STRING</dataType>
+                      <metaDataModelPropertiesManager>
+                        <properties>
+                          <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                            <typeQName>
+                              <namespaceURI>http://mulesoft.org/tshirt-service</namespaceURI>
+                              <localPart>Size</localPart>
+                              <prefix></prefix>
+                            </typeQName>
+                          </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                        </properties>
+                      </metaDataModelPropertiesManager>
+                    </model>
+                    <accessType>READ_WRITE</accessType>
+                    <metaDataFieldPropertyManager>
+                      <properties>
+                        <org.mule.common.metadata.property.QNameMetaDataProperty>
+                          <name>
+                            <namespaceURI></namespaceURI>
+                            <localPart>size</localPart>
+                            <prefix></prefix>
+                          </name>
+                        </org.mule.common.metadata.property.QNameMetaDataProperty>
+                      </properties>
+                    </metaDataFieldPropertyManager>
+                  </org.mule.common.metadata.DefaultMetaDataField>
+                  <org.mule.common.metadata.DefaultMetaDataField>
+                    <name>description</name>
+                    <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                      <dataType>STRING</dataType>
+                      <metaDataModelPropertiesManager>
+                        <properties>
+                          <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                            <typeQName reference="../../../../../../org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                          </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                        </properties>
+                      </metaDataModelPropertiesManager>
+                    </model>
+                    <accessType>READ_WRITE</accessType>
+                    <metaDataFieldPropertyManager>
+                      <properties>
+                        <org.mule.common.metadata.property.QNameMetaDataProperty>
+                          <name>
+                            <namespaceURI></namespaceURI>
+                            <localPart>description</localPart>
+                            <prefix></prefix>
+                          </name>
+                        </org.mule.common.metadata.property.QNameMetaDataProperty>
+                      </properties>
+                    </metaDataFieldPropertyManager>
+                  </org.mule.common.metadata.DefaultMetaDataField>
+                  <org.mule.common.metadata.DefaultMetaDataField>
+                    <name>count</name>
+                    <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                      <dataType>INTEGER</dataType>
+                      <metaDataModelPropertiesManager>
+                        <properties>
+                          <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                            <typeQName>
+                              <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+                              <localPart>integer</localPart>
+                              <prefix></prefix>
+                            </typeQName>
+                          </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                        </properties>
+                      </metaDataModelPropertiesManager>
+                    </model>
+                    <accessType>READ_WRITE</accessType>
+                    <metaDataFieldPropertyManager>
+                      <properties>
+                        <org.mule.common.metadata.property.QNameMetaDataProperty>
+                          <name>
+                            <namespaceURI></namespaceURI>
+                            <localPart>count</localPart>
+                            <prefix></prefix>
+                          </name>
+                        </org.mule.common.metadata.property.QNameMetaDataProperty>
+                      </properties>
+                    </metaDataFieldPropertyManager>
+                  </org.mule.common.metadata.DefaultMetaDataField>
+                </fields>
+                <rootElement>
+                  <namespaceURI>http://mulesoft.org/tshirt-service</namespaceURI>
+                  <localPart>ListInventoryResponse</localPart>
+                  <prefix>ns0</prefix>
+                </rootElement>
+                <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+                  <schemas>
+                    <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ms=&quot;http://mulesoft.org/tshirt-service&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http://mulesoft.org/tshirt-service&quot;&gt;
+            &lt;xsd:element name=&quot;ListInventory&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence/&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;ListInventoryResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;inventory&quot; type=&quot;ms:InventoryItem&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+        
+                &lt;xsd:complexType name=&quot;InventoryItem&quot;&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;productCode&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                        &lt;xsd:element name=&quot;description&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;count&quot; type=&quot;xsd:integer&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            
+            &lt;xsd:simpleType name=&quot;Size&quot;&gt;
+                &lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+                    &lt;xsd:enumeration value=&quot;S&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;M&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;L&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;XL&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;XXL&quot;/&gt;
+                &lt;/xsd:restriction&gt;
+            &lt;/xsd:simpleType&gt;
+            
+            &lt;xsd:element name=&quot;OrderTshirt&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                        &lt;xsd:element name=&quot;email&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;name&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;address1&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;address2&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;city&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;stateOrProvince&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;postalCode&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;country&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+            &lt;xsd:element name=&quot;OrderTshirtResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+            &lt;xsd:element name=&quot;TrackOrder&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;email&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;TrackOrderResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;status&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;AuthenticationHeader&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;apiKey&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;APIUsageInformation&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;apiCallsRemaining&quot; type=&quot;xsd:integer&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;TshirtFault&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;errorMessage&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+        &lt;/xsd:schema&gt;</string>
+                  </schemas>
+                  <encoding reference="../../../../../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/schemas/encoding"/>
+                  <baseUri>src/main/resources/tshirt.wsdl</baseUri>
+                </schemas>
+                <namespaceManager>
+                  <namespacePrefix>
+                    <entry>
+                      <string>http://mulesoft.org/tshirt-service</string>
+                      <string>ns0</string>
+                    </entry>
+                  </namespacePrefix>
+                </namespaceManager>
+              </model>
+              <isArray>false</isArray>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>inventory</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http://mulesoft.org/tshirt-service</namespaceURI>
+          <localPart>ListInventoryResponse</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas reference="../../fields/org.mule.common.metadata.DefaultMetaDataField/model/model/schemas/schemas"/>
+          <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/schemas/encoding"/>
+          <baseUri>src/main/resources/tshirt.wsdl</baseUri>
+        </schemas>
+        <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField/model/model/namespaceManager"/>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>OrderTshirt</id>
+        <displayName>OrderTshirt</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>size</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName>
+                      <namespaceURI>http://mulesoft.org/tshirt-service</namespaceURI>
+                      <localPart>Size</localPart>
+                      <prefix></prefix>
+                    </typeQName>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>size</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>email</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>email</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>name</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>name</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>address1</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>address1</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>address2</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>address2</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>city</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>city</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>stateOrProvince</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>stateOrProvince</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>postalCode</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>postalCode</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>country</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>country</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http://mulesoft.org/tshirt-service</namespaceURI>
+          <localPart>OrderTshirt</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas>
+            <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ms=&quot;http://mulesoft.org/tshirt-service&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http://mulesoft.org/tshirt-service&quot;&gt;
+            &lt;xsd:element name=&quot;ListInventory&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence/&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;ListInventoryResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;inventory&quot; type=&quot;ms:InventoryItem&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+        
+                &lt;xsd:complexType name=&quot;InventoryItem&quot;&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;productCode&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                        &lt;xsd:element name=&quot;description&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;count&quot; type=&quot;xsd:integer&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            
+            &lt;xsd:simpleType name=&quot;Size&quot;&gt;
+                &lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+                    &lt;xsd:enumeration value=&quot;S&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;M&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;L&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;XL&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;XXL&quot;/&gt;
+                &lt;/xsd:restriction&gt;
+            &lt;/xsd:simpleType&gt;
+            
+            &lt;xsd:element name=&quot;OrderTshirt&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                        &lt;xsd:element name=&quot;email&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;name&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;address1&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;address2&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;city&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;stateOrProvince&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;postalCode&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;country&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+            &lt;xsd:element name=&quot;OrderTshirtResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+            &lt;xsd:element name=&quot;TrackOrder&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;email&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;TrackOrderResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;status&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;AuthenticationHeader&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;apiKey&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;APIUsageInformation&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;apiCallsRemaining&quot; type=&quot;xsd:integer&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;TshirtFault&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;errorMessage&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+        &lt;/xsd:schema&gt;</string>
+          </schemas>
+          <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/schemas/encoding"/>
+          <baseUri>src/main/resources/tshirt.wsdl</baseUri>
+        </schemas>
+        <namespaceManager>
+          <namespacePrefix>
+            <entry>
+              <string>http://mulesoft.org/tshirt-service</string>
+              <string>ns0</string>
+            </entry>
+          </namespacePrefix>
+        </namespaceManager>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>OrderTshirtResponse</id>
+        <displayName>OrderTshirtResponse</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>orderId</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry[2]/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/model/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>orderId</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http://mulesoft.org/tshirt-service</namespaceURI>
+          <localPart>OrderTshirtResponse</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas>
+            <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ms=&quot;http://mulesoft.org/tshirt-service&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http://mulesoft.org/tshirt-service&quot;&gt;
+            &lt;xsd:element name=&quot;ListInventory&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence/&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;ListInventoryResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;inventory&quot; type=&quot;ms:InventoryItem&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+        
+                &lt;xsd:complexType name=&quot;InventoryItem&quot;&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;productCode&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                        &lt;xsd:element name=&quot;description&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;count&quot; type=&quot;xsd:integer&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            
+            &lt;xsd:simpleType name=&quot;Size&quot;&gt;
+                &lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+                    &lt;xsd:enumeration value=&quot;S&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;M&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;L&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;XL&quot;/&gt;
+                    &lt;xsd:enumeration value=&quot;XXL&quot;/&gt;
+                &lt;/xsd:restriction&gt;
+            &lt;/xsd:simpleType&gt;
+            
+            &lt;xsd:element name=&quot;OrderTshirt&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                        &lt;xsd:element name=&quot;email&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;name&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;address1&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;address2&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;city&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;stateOrProvince&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;postalCode&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;country&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+            &lt;xsd:element name=&quot;OrderTshirtResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+            &lt;xsd:element name=&quot;TrackOrder&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;email&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;TrackOrderResponse&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;orderId&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;status&quot; type=&quot;xsd:string&quot;/&gt;
+                        &lt;xsd:element name=&quot;size&quot; type=&quot;ms:Size&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;AuthenticationHeader&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;apiKey&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;APIUsageInformation&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:sequence&gt;
+                        &lt;xsd:element name=&quot;apiCallsRemaining&quot; type=&quot;xsd:integer&quot;/&gt;
+                    &lt;/xsd:sequence&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+            
+            &lt;xsd:element name=&quot;TshirtFault&quot;&gt;
+                &lt;xsd:complexType&gt;
+                    &lt;xsd:all&gt;
+                        &lt;xsd:element name=&quot;errorMessage&quot; type=&quot;xsd:string&quot;/&gt;
+                    &lt;/xsd:all&gt;
+                &lt;/xsd:complexType&gt;
+            &lt;/xsd:element&gt;
+
+        &lt;/xsd:schema&gt;</string>
+          </schemas>
+          <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/schemas/encoding"/>
+          <baseUri>src/main/resources/tshirt.wsdl</baseUri>
+        </schemas>
+        <namespaceManager>
+          <namespacePrefix>
+            <entry>
+              <string>http://mulesoft.org/tshirt-service</string>
+              <string>ns0</string>
+            </entry>
+          </namespacePrefix>
+        </namespaceManager>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+  </types>
+  <connectorName>Web_Service_Consumer</connectorName>
+</metadata__catalog__entry>

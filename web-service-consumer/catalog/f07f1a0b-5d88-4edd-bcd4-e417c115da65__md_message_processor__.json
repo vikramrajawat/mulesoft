@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "orderTshitResponseXML"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "orderTshirtResponseJSON"
+        }
+    },
+    "id": "f07f1a0b-5d88-4edd-bcd4-e417c115da65",
+    "version": "5.2.0.0"
+}

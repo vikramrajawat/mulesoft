@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns2:ListInventoryResponse xmlns:ns2="http://mulesoft.org/tshirt-service">
+  <inventory>
+    <productCode>4102</productCode>
+    <size>L</size>
+    <description>Prueba</description>
+    <count>2</count>
+  </inventory>
+  <inventory>
+    <productCode>1412</productCode>
+    <size>L</size>
+    <description>Foo</description>
+    <count>9</count>
+  </inventory>
+  <inventory>
+    <productCode>5656</productCode>
+    <size>S</size>
+    <description>Bar</description>
+    <count>2</count>
+  </inventory>
+  <inventory>
+    <productCode>5657</productCode>
+    <size>M</size>
+    <description>Prueba2</description>
+    <count>3</count>
+  </inventory>
+  <inventory>
+    <productCode>1411</productCode>
+    <size>M</size>
+    <description>Awesome Tshirt</description>
+    <count>5</count>
+  </inventory>
+</ns2:ListInventoryResponse>

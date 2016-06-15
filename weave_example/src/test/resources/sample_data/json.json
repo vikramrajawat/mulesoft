@@ -1,0 +1,23 @@
+{
+  "product": {
+    "price": "????",
+    "model": "????"
+  },
+  "item_amount": "????",
+  "payment": {
+    "payment-type": "????",
+    "currency": "????",
+    "installments": "????"
+  },
+  "buyer": {
+    "email": "vsr@gmail.com",
+    "name": "vsr",
+    "address": "kalwad",
+    "city": "pune",
+    "state": "TX",
+    "postCode": "411012",
+    "nationality": "????"
+  },
+  "shop": "????",
+  "salesperson": "????"
+}
