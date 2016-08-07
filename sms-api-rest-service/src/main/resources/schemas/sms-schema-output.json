@@ -1,0 +1,16 @@
+    {
+              "$schema": "http://json-schema.org/draft-03/schema",
+              "properties": {
+                  "message": {
+                      "description": "Message text to be sent to users",
+                      "type": "string"
+                  },
+                  "mobNo": {
+                      "description": "A ten-digit mobile number",
+                      "maxLength": 10,
+                      "minLength": 10,
+                      "type": "string"
+                  }
+              },
+              "type": "object"            
+          }

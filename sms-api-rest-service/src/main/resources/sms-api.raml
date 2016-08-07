@@ -1,0 +1,27 @@
+#%RAML 0.8
+---
+title: SMS
+version: 1.0
+baseUri: http://api.sms.mycompany.com/1.0
+documentation:
+  - title: SMS API
+    content: |
+      API to send SMS to national and international mobile number.
+/sms:
+  displayName: SMS
+  description: |
+    A SMS API allow you send text message to a mobile number.
+  post:
+    description: Send a text message (SMS)
+    body:
+      application/json:
+        example: !include examples/sms-post-example.json
+        schema: !include schemas/sms-schema-output.json      
+    responses:
+      201:
+        description: |
+          The SMS has been sent successfully!
+        headers:
+          Location:
+            type: string
+            description: Mobile number 
