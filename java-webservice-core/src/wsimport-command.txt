@@ -1,0 +1,1 @@
+wsimport -p teamsC -keep http://localhost:8888/teams?wsdl
